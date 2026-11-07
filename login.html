@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1117">
+  <title>Sign In | WatchMe</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1117;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+      background: #141e27;
+      padding: 38px;
+      border: 1px solid #263641;
+      border-radius: 18px;
+      box-shadow: 0 15px 50px #0008;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #d6b36a;
+      margin-bottom: 30px;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aab5bf;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 14px;
+      color: #dbe3e9;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 15px;
+      background: #0c141b;
+      border: 1px solid #354550;
+      border-radius: 8px;
+      color: white;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .field input:focus {
+      border-color: #d6b36a;
+    }
+
+    .password-box {
+      position: relative;
+    }
+
+    .password-box button {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #d6b36a;
+      cursor: pointer;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0 25px;
+      font-size: 13px;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #b8c3cc;
+    }
+
+    a {
+      color: #d6b36a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #d6b36a, #a98642);
+      color: #101820;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      opacity: 0.9;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 25px 0;
+      color: #83909a;
+      font-size: 13px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #354550;
+    }
+
+    .register {
+      text-align: center;
+      color: #aab5bf;
+      font-size: 14px;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      color: #aab5bf;
+      font-size: 13px;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+      color: #e5c67e;
+      font-size: 13px;
+    }
+
+    @media(max-width: 480px) {
+      .login-container {
+        padding: 27px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="login-container">
+
+    <div class="logo">⌚ WATCH<span>ME</span></div>
+
+    <h1>Welcome Back</h1>
+
+    <p class="subtitle">
+      Sign in to discover exceptional watches
+      and manage your account.
+    </p>
+
+    <div class="login-form" id="loginForm">
+
+      <form id="login">
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+
+          <div class="password-box">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button type="button" id="togglePassword">
+              Show
+            </button>
+          </div>
+        </div>
+
+        <div class="options">
+
+          <label class="remember">
+            <input type="checkbox" name="remember">
+            Remember me
+          </label>
+
+          <a href="forgot-password.html">
+            Forgot password?
+          </a>
+
+        </div>
+
+        <button class="login-btn" type="submit">
+          Sign In
+        </button>
+
+        <p id="message" role="status"></p>
+
+      </form>
+
+    </div>
+
+    <div class="divider">NEW TO WATCHME?</div>
+
+    <p class="register">
+      Don't have an account?
+      <a href="register.html">Create Account</a>
+    </p>
+
+    <a href="index.html" class="back-home">
+      ← Back to Homepage
+    </a>
+
+  </main>
+
+  <script>
+    const password = document.getElementById("password");
+    const toggle = document.getElementById("togglePassword");
+    const login = document.getElementById("login");
+    const message = document.getElementById("message");
+
+    toggle.addEventListener("click", () => {
+      const hidden = password.type === "password";
+
+      password.type = hidden ? "text" : "password";
+      toggle.textContent = hidden ? "Hide" : "Show";
+    });
+
+    login.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      message.textContent =
+        "Login interface ready. Authentication will be connected to Supabase.";
+
+    });
+  </script>
+
+</body>
+                                              </html>
+                                              
