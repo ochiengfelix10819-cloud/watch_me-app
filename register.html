@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1117">
+  <title>Create Account | WatchMe</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1117;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 15px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: #141e27;
+      padding: 35px;
+      border: 1px solid #293944;
+      border-radius: 18px;
+      box-shadow: 0 15px 50px #0008;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #d6b36a;
+      margin-bottom: 25px;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aab5bf;
+      font-size: 14px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 14px;
+      color: #dbe3e9;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 14px;
+      background: #0c141b;
+      border: 1px solid #354550;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: #d6b36a;
+    }
+
+    .field select option {
+      background: #141e27;
+    }
+
+    .terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: #aab5bf;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 20px 0;
+    }
+
+    .terms input {
+      margin-top: 3px;
+    }
+
+    a {
+      color: #d6b36a;
+      text-decoration: none;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #d6b36a, #a98642);
+      border: none;
+      border-radius: 8px;
+      color: #101820;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .register-btn:hover {
+      opacity: 0.9;
+    }
+
+    #message {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    .login-link {
+      text-align: center;
+      color: #aab5bf;
+      margin-top: 25px;
+      font-size: 14px;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #aab5bf;
+      font-size: 13px;
+    }
+
+    @media(max-width: 480px) {
+      .container {
+        padding: 27px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="logo">⌚ WATCH<span>ME</span></div>
+
+    <h1>Create Your Account</h1>
+
+    <p class="subtitle">
+      Join WatchMe and discover a world of exceptional watches.
+    </p>
+
+    <form id="registerForm">
+
+      <div class="field">
+        <label for="fullname">Full Name</label>
+        <input
+          type="text"
+          id="fullname"
+          placeholder="Enter your full name"
+          autocomplete="name"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Enter your phone number"
+          autocomplete="tel"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="role">Account Type</label>
+        <select id="role" required>
+          <option value="">Choose account type</option>
+          <option value="customer">Customer</option>
+          <option value="seller">Watch Seller</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="password">Create Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="At least 8 characters"
+          minlength="8"
+          autocomplete="new-password"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirm your password"
+          autocomplete="new-password"
+          required
+        >
+      </div>
+
+      <label class="terms">
+        <input type="checkbox" id="terms" required>
+        <span>
+          I agree to the WatchMe
+          <a href="terms.html">Terms and Conditions</a>
+          and Privacy Policy.
+        </span>
+      </label>
+
+      <button type="submit" class="register-btn">
+        Create Account
+      </button>
+
+      <p id="message" role="status"></p>
+
+    </form>
+
+    <p class="login-link">
+      Already have an account?
+      <a href="login.html">Sign In</a>
+    </p>
+
+    <a href="index.html" class="back-home">
+      ← Back to Homepage
+    </a>
+
+  </main>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const password =
+        document.getElementById("password").value;
+
+      const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+      if (password.length < 8) {
+        message.style.color = "#ff7777";
+        message.textContent =
+          "Password must contain at least 8 characters.";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        message.style.color = "#ff7777";
+        message.textContent =
+          "Passwords do not match. Please try again.";
+        return;
+      }
+
+      if (!document.getElementById("terms").checked) {
+        message.style.color = "#ff7777";
+        message.textContent =
+          "Please accept the terms and conditions.";
+        return;
+      }
+
+      message.style.color = "#d6b36a";
+      message.textContent =
+        "Registration form validated! Account creation will be enabled after Supabase integration.";
+    });
+  </script>
+
+</body>
+</html>
